@@ -11,7 +11,7 @@ def modifyQuestionResponses(responseContent):
         questions = JSONQuestionResponse["success"]["questions"]
         for question in questions:
             correctAnswerText = question["alt1"]
-            answerModifier = "==> "
+            answerModifier = "   "
             modifiedAnswerText = answerModifier + correctAnswerText
             question["alt1"] = modifiedAnswerText
         return json.dumps(JSONQuestionResponse)
