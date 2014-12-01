@@ -11,7 +11,7 @@ def modifyQuestionResponses(responseContent):
         questions = JSONQuestionResponse["success"]["questions"]
         for question in questions:
             correctAnswerText = question["alt1"]
-            answerModifier = "   "
+            answerModifier = "==> "
             modifiedAnswerText = answerModifier + correctAnswerText
             question["alt1"] = modifiedAnswerText
         return json.dumps(JSONQuestionResponse)
@@ -21,8 +21,7 @@ def modifyQuestionResponses(responseContent):
 def response(context, flow):
     if flow.request.pretty_host(hostheader=True).startswith("quizserver.feomedia.se"):
         print("QF-Response")
-        if "new_game" in flow.request.path:
-            print("new_game")
+        if "qf_games" in flow.request.path:
             with decoded(flow.response):
                 questionResponses = (flow.response.content)
                 h = HTMLParser.HTMLParser()
