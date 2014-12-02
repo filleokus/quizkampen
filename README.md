@@ -12,3 +12,6 @@ Limitations
 -----
 This have only been tested on the latest version of Quizkampen running on iOS.
 
+Screenshot
+-----
+![Screenshot](screenshot.png?raw=true "Screenshot showing offset")
